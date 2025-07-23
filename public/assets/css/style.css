@@ -1,0 +1,510 @@
+:root {
+  --primary-color: #f58b11;
+  --secondary-color: #f8fafc;
+  --text-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--secondary-color);
+  color: #111;
+}
+
+section {
+  scroll-margin-top: 70px;
+}
+
+section h2{
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  font-size: 2.5em;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('../image/background-partner.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245,139,17,0.5); 
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-logo {
+  width: 170px;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.hero-text span {
+  color: var(--secondary-color);
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.hero-text button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: #111;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.members {
+  text-align: center;
+  padding: 2rem;
+}
+
+.member-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.member-card {
+  perspective: 1000px;
+  width: 280px;
+  height: 400px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.member-card:hover .card-inner,
+.member-card.flip .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background-color: white;
+  overflow: hidden;
+}
+
+.card-front .avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.top-section {
+  position: absolute;
+  top: 0;
+  background-color: var(--primary-color);
+  height: 125px;
+  width: 300px;
+}
+
+.avatar-back {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.avatar-back img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.name {
+  margin-top: 8rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  margin-top: 3rem;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: var(--primary-color);
+  background-color: #333;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 15px;
+  transition: all 0.3s;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-10px);
+  color: #333;
+  background-color: var(--primary-color);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}
+
+.nomember {
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+}
+
+.nomember .member-card {
+  text-align: center;
+  justify-content: center;
+}
+
+.show-more-btn {
+  display: none;
+}
+
+.live-swiper {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.live-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 2rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.live-card a {
+  text-decoration: none;
+  color: #111;
+}
+
+.live-card img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}  
+
+.live-card small {
+  font-size: 12px;
+}
+
+.nolive {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.nolive .live-card {
+  justify-content: center;
+  text-align: center;
+}
+
+.gallery-section {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 5px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.merch {
+  padding: 40px 0;
+}
+
+.merch-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.merch-card img {
+  max-width: 100%;
+  width: 240px;
+  height: 240px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.merch-info h3 {
+  font-size: 1.1rem;
+  margin: 10px 0 5px;
+}
+
+.merch-info p {
+  color: #777;
+}
+
+
+.merch-info button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.merch-info button:hover {
+  background-color: #cf7610;
+}
+
+div .swiper-button-prev, div .swiper-button-next {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li a {
+    font-size: 20px;
+    color: white;
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+
+  .member-card {
+    perspective: 1000px;
+    width: 380px;
+    height: 450px;
+  }
+
+  .card-front, .card-back {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .card-front img {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .top-section {
+    width: 380px;
+    height: 135px;
+  }
+
+  .avatar-back img{
+    width: 120px;
+    height: 120px;
+  }
+
+  .name {
+    margin-top: 100px;
+  }
+
+  .live-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .merch-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .d-none {
+    display: none !important;
+  }
+
+  .show-more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .show-more-btn {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+}
+
